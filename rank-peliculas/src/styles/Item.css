@@ -1,3 +1,7 @@
+
+.formulario{
+    color:black;
+}
 .item{
     
     display: inline-block;
@@ -27,7 +31,7 @@
     border: 0;
     border-radius: 3px;
     background-color:rgb(232, 78, 78);
-    color: white;
+    /* color: white; */
     font-weight: bold;
     padding: 5px;
     width: 100%;

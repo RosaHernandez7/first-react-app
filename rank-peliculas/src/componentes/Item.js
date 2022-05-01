@@ -14,7 +14,7 @@ class Item extends React.Component{
 
   componentDidMount(){
     this.setState({
-      stars:Array(parseInt(this.props.rating)).fill(0) //tome el valor del rating y lo relene con ceros, esta funcion fill no me ocnc¿vence
+      stars:Array(parseInt(this.props.rating)).fill(0)//tome el valor del rating y lo relene con ceros, esta funcion fill no me ocnc¿vence
     });
   }
 
@@ -29,7 +29,7 @@ class Item extends React.Component{
         <div className="rating">
           <p>
             {
-              this.state.stars.map(x=>
+              this.state.stars.map(x=>   //los espacios con cero los rellena con una imagen
                   <img src="https://www.pngplay.com/wp-content/uploads/8/Gold-Vector-Star-Download-Free-PNG.png" width="32"/>
                 
           

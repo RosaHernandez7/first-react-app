@@ -1,15 +1,30 @@
 import React from "react";
 import  '../styles/Menu.css';
 import Search from './Search'
+import PanelAdd from './PanelAdd'
 
-function Menu(props){
-    return(
+class Menu extends React.Component{
+    constructor(props){
+        super(props);
+        this.state ={newItemPanel:false};
+        this.add= this.add.bind(this); //bind() is an inbuilt method in React that is used to pass the data as an argument to the function of a class based component.        this.onCancel =this.onCancel.bind(this);
+        this.onCancel = this.onCancel.bind(this);
+    }
+    add(){
+        this.setState({newItemPanel:true});
+        console.log("haz dado clic sobre le boton");
+    }
 
+    onCancel(){
+        this.setState({newItemPanel:false})
+    }
+    render(){
+        return(
         <div className="container">
             <div className="subcontainer">
                 <div className="logo">
                     {
-                        props.title
+                        this.props.title
                     }
 
                 </div>
@@ -17,12 +32,16 @@ function Menu(props){
                     <Search/>
                 </div>
                 <div className="actions"> 
-                    <button className="button btn-blue"> +Añadir nuevo libro </button>
+                    <button onClick={this.add} className="button btn-blue"> +Añadir nuevo libro </button>
                 </div>
             </div>
+            {
+               (this.state.newItemPanel)?
+                <PanelAdd  onCancel={this.onCancel}/>:' '
+            }
+            
         </div>
-
-    );
-
+        );
+    }
 }
 export default Menu;
